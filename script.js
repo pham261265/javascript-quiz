@@ -3,7 +3,10 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const startingMinutes = 3;
+const countdownEl = document.getElementById('countdown');
 
+let time = startingMinutes * 60;
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
@@ -11,6 +14,19 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 3 ? '0' + seconds : seconds;
+
+    countdownEl.innerHTML = `${minutes}: ${seconds}`;
+    time--;
+
+}
 
 function startGame() {
     console.log('started')
@@ -84,35 +100,35 @@ const questions = [
         question: 'Which one of these is a JavaScript package manager?',
         answers: [
             { text: 'npm', correct: true},
-            { text: 'Node.js', correct: false},
+            { text: 'Node.js', correct: false}
         ]
     },
     {
         question: 'Which tool can you use to ensure code quality?',
         answers: [
             { text: 'ESLint', correct: true},
-            { text: 'Angular', correct: false},
+            { text: 'Angular', correct: false}
         ]
     },
     {
         question: 'Inside which HTML element do we put the JavaScript?',
         answers: [
             { text: '<js>', correct: false},
-            { text: '<script>', correct: true},
+            { text: '<script>', correct: true}
         ]
     },
     {
         question: 'Where is the correct place to insert a JavaScript?',
         answers: [
             { text: 'The <body> section', correct: true},
-            { text: 'The <head> section', correct: false},
+            { text: 'The <head> section', correct: false}
         ]
     },
     {
         question: 'What is the correct syntax for referring to an external script called "xxx.js"?',
         answers: [
             { text: '<script name="xxx.js">', correct: false},
-            { text: '<script src="xxx.js">', correct: true},
+            { text: '<script src="xxx.js">', correct: true}
         ]
     },
 ]

@@ -58,7 +58,7 @@ body.wrong {
 }
 
 .btn.correct {
-    --hue: var(--hue-wrong);
+    --hue: var(--hue-correct);
 }
 
 .btn.wrong {
@@ -78,4 +78,13 @@ body.wrong {
 
 .hide {
     display: none;
+}
+
+p {
+    font-size: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 75px;
+    color: white;
 }
