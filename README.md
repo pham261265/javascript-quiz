@@ -9,7 +9,7 @@ A timed quiz over JavaScript
 * JavaScipt
 
 ## Website
-https://lernantino.github.io/run-buddy/
+https://github.com/pham261265/javascript-quiz
 
 ## Contribution
 Made with ❤️ by Preston Pham
